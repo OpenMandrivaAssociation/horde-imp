@@ -1,7 +1,7 @@
 %define	module	imp
 %define	name	horde-%{module}
-%define version 4.1.3
-%define release %mkrel 2
+%define version 4.1.4
+%define release %mkrel 1
 
 %define _requires_exceptions pear(\\(Horde.*\\|Text/Flowed.php\\|VFS.*\\))
 
@@ -119,6 +119,3 @@ fi
 %config(noreplace) %{_sysconfdir}/horde/%{module}
 %{_datadir}/horde/%{module}
 %{_var}/www/horde/%{module}
-
-
-
