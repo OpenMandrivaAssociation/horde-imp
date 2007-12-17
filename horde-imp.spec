@@ -19,7 +19,6 @@ Requires:	horde >= 3.0
 Requires:	php-imap
 Requires:	php-ldap
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 IMP is the Internet Messaging Program, one of the Horde applications.
