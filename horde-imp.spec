@@ -32,11 +32,6 @@ It provides webmail access to IMAP and POP3 accounts.
 # fix perms
 chmod 644 locale/da_DK/help.xml
 
-# fix encoding
-for file in `find . -type f`; do
-    perl -pi -e 'BEGIN {exit unless -T $ARGV[0];} tr/\r//d;' $file
-done
-
 %build
 
 %install
