@@ -1,6 +1,6 @@
 %define	module	imp
 %define	name	horde-%{module}
-%define version 4.1.6
+%define version 4.2
 %define release %mkrel 1
 
 %define _requires_exceptions pear(\\(Horde.*\\|Text/Flowed.php\\|VFS.*\\))
@@ -11,8 +11,7 @@ Release:	%{release}
 Summary:	The Horde webmail application
 License:	GPL
 Group:		System/Servers
-Source0:	ftp://ftp.horde.org/pub/%{module}/%{module}-h3-%{version}.tar.bz2
-Patch0:		%{name}-4.0.1-path.patch
+Source0:	ftp://ftp.horde.org/pub/%{module}/%{module}-h3-%{version}.tar.gz
 URL:		http://www.horde.org/%{module}
 Requires(post):	rpm-helper
 Requires:	horde >= 3.0
@@ -27,7 +26,6 @@ It provides webmail access to IMAP and POP3 accounts.
 
 %prep
 %setup -q -n %{module}-h3-%{version}
-%patch
 
 # fix perms
 chmod 644 locale/da_DK/help.xml
