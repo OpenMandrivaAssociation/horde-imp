@@ -1,14 +1,14 @@
 %define	module	imp
 %define	name	horde-%{module}
 %define version 4.3
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define _requires_exceptions pear(\\(Horde.*\\|Text/Flowed.php\\|VFS.*\\))
 
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Summary:	The Horde webmail application
+Summary:	The Horde Internet Messaging Program
 License:	GPL
 Group:		System/Servers
 Source0:	ftp://ftp.horde.org/pub/%{module}/%{module}-h3-%{version}.tar.gz
@@ -37,18 +37,18 @@ rm -rf %{buildroot}
 
 # horde configuration
 install -d -m 755 %{buildroot}%{_sysconfdir}/horde/registry.d
-cat > %{buildroot}%{_sysconfdir}/horde/registry.d/%{module}.php <<EOF
+cat > %{buildroot}%{_sysconfdir}/horde/registry.d/%{module}.php <<'EOF'
 <?php
 //
 // Imp Horde configuration file
 //
  
 \$this->applications['imp'] = array(
-    'fileroot' => \$this->applications['horde']['fileroot'] . '/imp',
-    'webroot'  => \$this->applications['horde']['webroot'] . '/imp',
+    'fileroot' => $this->applications['horde']['fileroot'] . '/imp',
+    'webroot'  => $this->applications['horde']['webroot'] . '/imp',
     'name'     => _("Mail"),
     'status'   => 'active',
-    'provides' => 'mail'
+    'provides' => array('mail', 'contacts/favouriteRecipients')
 );
 
 \$this->applications['imp-folders'] = array(
