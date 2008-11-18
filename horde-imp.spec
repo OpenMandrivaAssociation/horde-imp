@@ -11,8 +11,9 @@ Release:	%{release}
 Summary:	The Horde Internet Messaging Program
 License:	GPL
 Group:		System/Servers
-Source0:	ftp://ftp.horde.org/pub/%{module}/%{module}-h3-%{version}.tar.gz
 URL:		http://www.horde.org/%{module}
+Source0:	ftp://ftp.horde.org/pub/%{module}/%{module}-h3-%{version}.tar.gz
+Patch:      imp-h3-4.3-fix-constant-loading.patch
 Requires(post):	rpm-helper
 Requires:	horde >= 3.0
 Requires:	php-imap
@@ -26,6 +27,7 @@ It provides webmail access to IMAP and POP3 accounts.
 
 %prep
 %setup -q -n %{module}-h3-%{version}
+%patch -p 1
 
 # fix perms
 chmod 644 locale/da_DK/help.xml
