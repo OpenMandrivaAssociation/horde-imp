@@ -1,7 +1,7 @@
 %define	module	imp
 %define	name	horde-%{module}
 %define version 4.3.1
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define _requires_exceptions pear(\\(Horde.*\\|Text/Flowed.php\\|VFS.*\\))
 
@@ -45,7 +45,7 @@ cat > %{buildroot}%{_sysconfdir}/horde/registry.d/%{module}.php <<'EOF'
 // Imp Horde configuration file
 //
  
-\$this->applications['imp'] = array(
+$this->applications['imp'] = array(
     'fileroot' => $this->applications['horde']['fileroot'] . '/imp',
     'webroot'  => $this->applications['horde']['webroot'] . '/imp',
     'name'     => _("Mail"),
@@ -53,7 +53,7 @@ cat > %{buildroot}%{_sysconfdir}/horde/registry.d/%{module}.php <<'EOF'
     'provides' => array('mail', 'contacts/favouriteRecipients')
 );
 
-\$this->applications['imp-folders'] = array(
+$this->applications['imp-folders'] = array(
     'status'      => 'block',
     'app'         => 'imp',
     'blockname'   => 'tree_folders',
