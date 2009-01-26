@@ -1,7 +1,7 @@
 %define	module	imp
 %define	name	horde-%{module}
-%define version 4.3.1
-%define release %mkrel 2
+%define version 4.3.2
+%define release %mkrel 1
 
 %define _requires_exceptions pear(\\(Horde.*\\|Text/Flowed.php\\|VFS.*\\))
 
