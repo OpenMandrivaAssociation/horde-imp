@@ -1,6 +1,6 @@
 %define	module	imp
 %define	name	horde-%{module}
-%define version 4.3.3
+%define version 4.3.4
 %define release %mkrel 1
 
 %define _requires_exceptions pear(\\(Horde.*\\|Text/Flowed.php\\|VFS.*\\))
@@ -26,7 +26,7 @@ IMP is the Internet Messaging Program, one of the Horde applications.
 It provides webmail access to IMAP and POP3 accounts.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{module}-h3-%{version}
 %patch -p 1
 
 # fix perms
