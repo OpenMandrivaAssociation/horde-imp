@@ -1,7 +1,7 @@
 %define	module	imp
 %define	name	horde-%{module}
 %define version 4.3.6
-%define release %mkrel 2
+%define release %mkrel 3
 
 %define _requires_exceptions pear(\\(Horde.*\\|Text/Flowed.php\\|VFS.*\\))
 
@@ -19,7 +19,6 @@ Requires:	horde >= 3.3.5
 Requires:	php-imap
 Requires:	php-ldap
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 IMP is the Internet Messaging Program, one of the Horde applications.
