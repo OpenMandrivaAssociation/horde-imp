@@ -1,7 +1,7 @@
 %define	module	imp
 %define	name	horde-%{module}
-%define version 4.3.6
-%define release %mkrel 3
+%define version 4.3.7
+%define release %mkrel 1
 
 %define _requires_exceptions pear(\\(Horde.*\\|Text/Flowed.php\\|VFS.*\\))
 
@@ -13,9 +13,9 @@ License:	GPL
 Group:		System/Servers
 URL:		http://www.horde.org/%{module}
 Source0:	ftp://ftp.horde.org/pub/%{module}/%{module}-h3-%{version}.tar.gz
-Patch:      imp-h3-4.3-fix-constant-loading.patch
+Patch0:      	imp-h3-4.3-fix-constant-loading.patch
 Requires(post):	rpm-helper
-Requires:	horde >= 3.3.5
+Requires:	horde >= 3.3.8
 Requires:	php-imap
 Requires:	php-ldap
 BuildArch:	noarch
@@ -26,7 +26,7 @@ It provides webmail access to IMAP and POP3 accounts.
 
 %prep
 %setup -q -n %{module}-h3-%{version}
-%patch -p 1
+%patch0 -p 1
 
 # fix perms
 chmod 644 locale/da_DK/help.xml
