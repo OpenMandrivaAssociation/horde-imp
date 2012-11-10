@@ -1,0 +1,12 @@
+diff -Naur --exclude '*~' imp-h3-4.3/config/prefs.php.dist imp-h3-4.3-fix-constant-loading/config/prefs.php.dist
+--- imp-h3-4.3/config/prefs.php.dist	2008-08-28 23:03:15.000000000 +0200
++++ imp-h3-4.3-fix-constant-loading/config/prefs.php.dist	2008-11-18 22:58:27.000000000 +0100
+@@ -6,7 +6,7 @@
+  */
+ 
+ // Make sure that constants are defined.
+-require_once dirname(__FILE__) . '/../lib/IMP.php';
++require_once '/usr/share/horde/imp/lib/IMP.php';
+ $is_pop3 = isset($_SESSION['imp']) &&
+            $_SESSION['imp']['base_protocol'] == 'pop3';
+ 
