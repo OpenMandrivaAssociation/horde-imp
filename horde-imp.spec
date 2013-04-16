@@ -1,20 +1,14 @@
 %define	module	imp
-%define	name	horde-%{module}
-%define version 4.3.9
-%define release: 3
 
-%define _requires_exceptions pear(\\(Horde.*\\|Text/Flowed.php\\|VFS.*\\))
-
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		horde-%{module}
+Version:	4.3.9
+Release:	3
 Summary:	The Horde Internet Messaging Program
 License:	GPL
 Group:		System/Servers
 URL:		http://www.horde.org/%{module}
 Source0:	ftp://ftp.horde.org/pub/%{module}/%{module}-h3-%{version}.tar.gz
 Patch0:      	imp-h3-4.3-fix-constant-loading.patch
-Requires(post):	rpm-helper
 Requires:	horde >= 3.3.8
 Requires:	php-imap
 Requires:	php-ldap
