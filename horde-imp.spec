@@ -3,7 +3,7 @@
 
 Name:		horde-%{module}
 Version:	4.3.9
-Release:	5
+Release:	6
 Summary:	The Horde Internet Messaging Program
 
 License:	GPL
